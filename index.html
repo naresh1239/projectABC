@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        .center-part{
+          
+            padding: 30px;
+            text-align: center;
+            box-shadow: 2px 1px 20px -8px rgb(0 0 0 / 50%);
+        }
+        .flex{
+            display: flex;
+            flex-direction: column;
+        }
+        input{
+margin: 10px 0;
+padding: 10px;
+outline: none;
+transition: all 0.1s linear;
+        }
+button{
+    border: none;
+    color: white;
+    background-color: rgb(200, 200, 238);
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+}
+button:hover{
+    background-color: rgb(158, 158, 250);
+    color: black;
+}
+input:focus{
+    background-color: black;
+    color: white;
+}
+h2{
+    background-color: black;
+    color: white;
+
+    border-radius: 5px;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+  <div class="center-part">
+      <div class="flex">
+        <input type="text" id="name" placeholder="Enter your name">
+        <input type="text" id="email" placeholder="Enter your email">
+      </div>
+ 
+          <button onclick="add()" id="btn" >Add</button>
+          <button onclick="remove()">rEmove</button>
+   
+  </div>
+<div class="list">
+   <h2 id="text"></h2>
+</div>
+</body>
+<script>
+
+        let name = document.getElementById("name");
+        let email = document.getElementById("email");
+
+
+     
+    function add(){
+     
+        let text = document.getElementById("text").innerHTML = `${name.value}    ${email.value}`;
+         
+
+ 
+ name.value = ""
+ email.value = ""
+
+ 
+
+
+}
+  function remove(){
+    let text = document.getElementById("text").innerHTML = "";
+  }
+
+ 
+
+</script>
+</html>
